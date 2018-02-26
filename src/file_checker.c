@@ -70,15 +70,14 @@ int		check4x4(t_file *file)
 
 int		checker(t_file *file)
 {
-	int		firstCheck;
-	int		secondCheck;
+	int		first_check;
+	int		second_check;
 
 	if (file->size < 19)
 		return (0);
-	firstCheck = syntax_ceck(file);
-	secondCheck = check4x4(file);
-
-	if (firstCheck == 1 && secondCheck == 1)
+	first_check = syntax_ceck(file);
+	second_check = check4x4(file);
+	if (first_check == 1 && second_check == 1)
 		return (1);
 	else
 	{

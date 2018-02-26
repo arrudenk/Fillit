@@ -12,7 +12,7 @@
 
 #include "header.h"
 
-int				get_x_shift(f_figure *field)
+int				get_x_shift(t_figure *field)
 {
 	int x;
 	int y;
@@ -35,7 +35,7 @@ int				get_x_shift(f_figure *field)
 	return (x_shift);
 }
 
-int				get_y_shift(f_figure *field)
+int				get_y_shift(t_figure *field)
 {
 	int x;
 	int y;
@@ -61,7 +61,7 @@ int				get_y_shift(f_figure *field)
 	return (y_shift);
 }
 
-f_figure		*move_by_y(f_figure *field, char fig)
+t_figure		*move_by_y(t_figure *field, char fig)
 {
 	int x;
 	int y;
@@ -85,7 +85,7 @@ f_figure		*move_by_y(f_figure *field, char fig)
 	return (field);
 }
 
-f_figure		*move_by_x(f_figure *field, char fig)
+t_figure		*move_by_x(t_figure *field, char fig)
 {
 	int x;
 	int y;
@@ -109,9 +109,10 @@ f_figure		*move_by_x(f_figure *field, char fig)
 	return (field);
 }
 
-f_figure		*cut(f_figure *field)
+t_figure		*cut(t_figure *field)
 {
 	static char fig = 65;
+
 	field = move_by_x(field, fig);
 	field = move_by_y(field, fig);
 	field->alphabet = fig;

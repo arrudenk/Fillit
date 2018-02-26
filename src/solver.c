@@ -12,16 +12,16 @@
 
 #include "header.h"
 
-int			solve_map(m_map *map, t_list *list)
+int			solve_map(t_map *map, t_list *list)
 {
 	int			x;
 	int			y;
-	f_figure	*tetri;
+	t_figure	*tetri;
 
 	if (list == NULL)
 		return (1);
 	y = -1;
-	tetri = (f_figure *)(list->content);
+	tetri = (t_figure *)(list->content);
 	while (++y < map->size - tetri->h + 1)
 	{
 		x = -1;
@@ -51,9 +51,9 @@ int			hight_sqrt(int n)
 	return (size);
 }
 
-m_map		*solve(t_list *figure_list, int figures_number)
+t_map		*solve(t_list *figure_list, int figures_number)
 {
-	m_map	*map;
+	t_map	*map;
 	int		i;
 	int		size;
 

@@ -12,7 +12,7 @@
 
 #include "header.h"
 
-void		find_height(f_figure *figure)
+void		find_height(t_figure *figure)
 {
 	int i;
 	int j;
@@ -35,7 +35,7 @@ void		find_height(f_figure *figure)
 	}
 }
 
-void		find_widtht(f_figure *figure)
+void		find_widtht(t_figure *figure)
 {
 	int i;
 	int j;
@@ -58,7 +58,7 @@ void		find_widtht(f_figure *figure)
 	}
 }
 
-void		*find_figure_size(f_figure *figure)
+void		*find_figure_size(t_figure *figure)
 {
 	find_widtht(figure);
 	find_height(figure);

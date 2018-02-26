@@ -13,8 +13,7 @@
 #include "header.h"
 #include <fcntl.h>
 
-
-int		cut_find_chek(t_list *list, int fig_num)
+int			cut_find_chek(t_list *list, int fig_num)
 {
 	int i;
 
@@ -57,7 +56,7 @@ t_file		*give_file_buff(char *argv)
 
 t_coord		*coord_new(int x, int y)
 {
-	t_coord		*coord;
+	t_coord	*coord;
 
 	coord = ft_memalloc(sizeof(t_coord));
 	coord->x = x;
@@ -65,13 +64,13 @@ t_coord		*coord_new(int x, int y)
 	return (coord);
 }
 
-void	set_minus_one(int *c, int *a)
+void		set_minus_one(int *c, int *a)
 {
 	*c = -1;
 	*a = -1;
 }
 
-void	ft_lstrev(t_list **alst)
+void		ft_lstrev(t_list **alst)
 {
 	t_list	*prev;
 	t_list	*cur;
@@ -88,4 +87,3 @@ void	ft_lstrev(t_list **alst)
 	}
 	*alst = prev;
 }
-

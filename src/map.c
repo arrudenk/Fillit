@@ -12,7 +12,7 @@
 
 #include "header.h"
 
-void		free_map(m_map *map)
+void		free_map(t_map *map)
 {
 	int i;
 
@@ -25,7 +25,7 @@ void		free_map(m_map *map)
 	ft_memdel((void *)&map);
 }
 
-void		print_map(m_map *map)
+void		print_map(t_map *map)
 {
 	int i;
 
@@ -37,13 +37,13 @@ void		print_map(m_map *map)
 	}
 }
 
-m_map		*new_map(int size)
+t_map		*new_map(int size)
 {
-	m_map	*map;
+	t_map	*map;
 	int		i;
 	int		j;
 
-	map = (m_map *)ft_memalloc(sizeof(m_map));
+	map = (t_map *)ft_memalloc(sizeof(t_map));
 	map->size = size;
 	i = -1;
 	map->field = (char **)ft_memalloc(sizeof(char *) * size);
@@ -59,7 +59,7 @@ m_map		*new_map(int size)
 	return (map);
 }
 
-int			place(f_figure *figure, m_map *map, int x, int y)
+int			place(t_figure *figure, t_map *map, int x, int y)
 {
 	int i;
 	int j;
@@ -78,7 +78,7 @@ int			place(f_figure *figure, m_map *map, int x, int y)
 	return (1);
 }
 
-void		set_piece(f_figure *figure, m_map *map, t_coord *coord, char c)
+void		set_piece(t_figure *figure, t_map *map, t_coord *coord, char c)
 {
 	int i;
 	int j;

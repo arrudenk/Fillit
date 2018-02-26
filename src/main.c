@@ -12,20 +12,24 @@
 
 #include "header.h"
 
-int			main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-	(void)argc;
-	t_file	*file;
+	t_file		*file;
+	t_list		*figures_list;
+	t_list		*temp;
+	t_map		*mapa;
 
+	if (argc != 2)
+	{
+		ft_putstr("error: arguments \n");
+		return (0);
+	}
 	file = give_file_buff(argv[1]);
 	if (checker(file))
 	{
-		t_list		*figures_list = extract_figures(file);
-		t_list		*temp;
-		m_map		*mapa;
-
+		figures_list = extract_figures(file);
 		temp = figures_list->next;
-		if(!cut_find_chek(temp, file->fig_num))
+		if (!cut_find_chek(temp, file->fig_num))
 			return (0);
 		mapa = solve(figures_list->next, file->fig_num);
 		print_map(mapa);

@@ -17,7 +17,7 @@ t_list		*create_figures_list(char **columns, int figures_number)
 	t_coord			*x_i;
 	t_coord			*c_a;
 	t_list			*figures_list;
-	f_figure		*temp;
+	t_figure		*temp;
 
 	c_a = coord_new(-1, -1);
 	x_i = coord_new(0, 0);
@@ -31,7 +31,7 @@ t_list		*create_figures_list(char **columns, int figures_number)
 		x_i->x++;
 		if (++x_i->y % FIELD_SIZE == 0)
 		{
-			ft_lstadd(&figures_list, ft_lstnew(temp, sizeof(f_figure)));
+			ft_lstadd(&figures_list, ft_lstnew(temp, sizeof(t_figure)));
 			ft_memdel((void *)&temp);
 			temp = init_figures_field();
 			x_i->x = 0;
@@ -45,7 +45,7 @@ t_list		*extract_figures(t_file *file)
 {
 	char		**columns;
 	t_list		*figurelist;
-	int i;
+	int			i;
 
 	i = -1;
 	columns = ft_strsplit(file->buff, '\n');

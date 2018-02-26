@@ -12,7 +12,7 @@
 
 #include "header.h"
 
-int		pairing_func(const int *rows, const int *cols ,int k1, int k2)
+int		pairing_func(const int *rows, const int *cols, int k1, int k2)
 {
 	int i;
 
@@ -25,7 +25,7 @@ int		pairing_func(const int *rows, const int *cols ,int k1, int k2)
 	return ((((k1 + k2) * (k1 + k2 + 1)) / 2) + k2);
 }
 
-int		control_sum(f_figure *figure)
+int		control_sum(t_figure *figure)
 {
 	int			*rows;
 	int			*cols;
@@ -45,10 +45,10 @@ int		control_sum(f_figure *figure)
 			cols[a_b->x] += (figure->data[a_b->x][a_b->y] == '#') ? 1 : 0;
 		}
 	}
-	return (pairing_func(rows,cols,row_col->x, row_col->y));
+	return (pairing_func(rows, cols, row_col->x, row_col->y));
 }
 
-int		check_figure(f_figure *figure)
+int		check_figure(t_figure *figure)
 {
 	int sum;
 

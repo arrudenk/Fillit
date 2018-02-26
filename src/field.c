@@ -12,13 +12,13 @@
 
 #include "header.h"
 
-f_figure		*init_figures_field(void)
+t_figure		*init_figures_field(void)
 {
-	f_figure		*f;
+	t_figure		*f;
 	unsigned int	x;
 	unsigned int	y;
 
-	f = malloc(sizeof(f_figure));
+	f = malloc(sizeof(t_figure));
 	x = 0;
 	y = 0;
 	while (x < FIELD_SIZE)
@@ -34,7 +34,7 @@ f_figure		*init_figures_field(void)
 	return (f);
 }
 
-void			print_figures(f_figure *field)
+void			print_figures(t_figure *field)
 {
 	int x;
 	int y;
