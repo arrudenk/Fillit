@@ -50,7 +50,7 @@ t_file		*give_file_buff(char *argv)
 	file->buff = ft_memalloc(sizeof(char) * file->size + 1);
 	read(fd, file->buff, file->size);
 	close(fd);
-	file->fig_num = file->size / 20;
+	file->fig_num = file->size / 21;
 	return (file);
 }
 

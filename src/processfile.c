@@ -37,7 +37,8 @@ t_list		*create_figures_list(char **columns, int figures_number)
 			x_i->x = 0;
 		}
 	}
-	ft_lstrev(&figures_list);
+	if (figures_number != 1)
+		ft_lstrev(&figures_list);
 	return (figures_list);
 }
 
