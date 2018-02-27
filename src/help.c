@@ -23,7 +23,7 @@ int			cut_find_chek(t_list *list, int fig_num)
 		cut(list->content);
 		if (!check_figure(list->content))
 		{
-			ft_putstr("error: wrong tetramine \n");
+			ft_putstr("usage : ./fillit error \n");
 			return (0);
 		}
 		find_figure_size(list->content);

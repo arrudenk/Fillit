@@ -33,24 +33,3 @@ t_figure		*init_figures_field(void)
 	}
 	return (f);
 }
-
-void			print_figures(t_figure *field)
-{
-	int x;
-	int y;
-
-	x = -1;
-	while (++x < field->h)
-	{
-		y = -1;
-		while (++y < field->w)
-		{
-			if (field->data[x][y] == '.')
-				ft_putchar(' ');
-			else
-				ft_putchar(field->data[x][y]);
-		}
-		ft_putstr("\n");
-	}
-	ft_putstr("\n");
-}

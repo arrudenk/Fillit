@@ -54,7 +54,6 @@ int			hight_sqrt(int n)
 t_map		*solve(t_list *figure_list, int figures_number)
 {
 	t_map	*map;
-	int		i;
 	int		size;
 
 	size = hight_sqrt(figures_number * 4);

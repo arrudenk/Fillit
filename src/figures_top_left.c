@@ -61,7 +61,7 @@ int				get_y_shift(t_figure *field)
 	return (y_shift);
 }
 
-t_figure		*move_by_y(t_figure *field, char fig)
+t_figure		*move_by_y(t_figure *field)
 {
 	int x;
 	int y;
@@ -85,7 +85,7 @@ t_figure		*move_by_y(t_figure *field, char fig)
 	return (field);
 }
 
-t_figure		*move_by_x(t_figure *field, char fig)
+t_figure		*move_by_x(t_figure *field)
 {
 	int x;
 	int y;
@@ -113,8 +113,8 @@ t_figure		*cut(t_figure *field)
 {
 	static char fig = 65;
 
-	field = move_by_x(field, fig);
-	field = move_by_y(field, fig);
+	field = move_by_x(field);
+	field = move_by_y(field);
 	field->alphabet = fig;
 	fig++;
 	return (field);

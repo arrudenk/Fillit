@@ -12,7 +12,7 @@
 
 #include "header.h"
 
-t_list		*create_figures_list(char **columns, int figures_number)
+t_list		*create_figures_list(char **columns)
 {
 	t_coord			*x_i;
 	t_coord			*c_a;
@@ -22,7 +22,7 @@ t_list		*create_figures_list(char **columns, int figures_number)
 	c_a = coord_new(-1, -1);
 	x_i = coord_new(0, 0);
 	temp = init_figures_field();
-	figures_list = ft_memalloc(sizeof(t_list *) * figures_number);
+	figures_list = NULL;
 	while (columns[x_i->y])
 	{
 		set_minus_one(&c_a->x, &c_a->y);
@@ -32,13 +32,12 @@ t_list		*create_figures_list(char **columns, int figures_number)
 		if (++x_i->y % FIELD_SIZE == 0)
 		{
 			ft_lstadd(&figures_list, ft_lstnew(temp, sizeof(t_figure)));
-			ft_memdel((void *)&temp);
+			ft_memdel((void **)&temp);
 			temp = init_figures_field();
 			x_i->x = 0;
 		}
 	}
-	if (figures_number != 1)
-		ft_lstrev(&figures_list);
+	ft_lstrev(&figures_list);
 	return (figures_list);
 }
 
@@ -50,7 +49,7 @@ t_list		*extract_figures(t_file *file)
 
 	i = -1;
 	columns = ft_strsplit(file->buff, '\n');
-	figurelist = create_figures_list(columns, file->fig_num);
+	figurelist = create_figures_list(columns);
 	while (columns[++i])
 		ft_strdel(&columns[i]);
 	free(columns);

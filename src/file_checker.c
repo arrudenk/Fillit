@@ -56,7 +56,6 @@ int		check4x4(t_file *file)
 		}
 		if (x_y->y != 4)
 		{
-			ft_putstr("error");
 			while (*column)
 				ft_strdel(&*column++);
 			return (0);
@@ -81,7 +80,7 @@ int		checker(t_file *file)
 		return (1);
 	else
 	{
-		ft_putstr("error f_ch");
+		ft_putstr("usage : ./fillit error \n");
 		return (0);
 	}
 }

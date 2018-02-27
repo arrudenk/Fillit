@@ -12,14 +12,12 @@
 
 #include "header.h"
 
-void		find_height(t_figure *figure)
+void			find_height(t_figure *figure)
 {
 	int i;
 	int j;
-	int height;
 
 	figure->h = 1;
-	height = 0;
 	i = -1;
 	while (++i < FIELD_SIZE)
 	{
@@ -35,14 +33,12 @@ void		find_height(t_figure *figure)
 	}
 }
 
-void		find_widtht(t_figure *figure)
+void			find_widtht(t_figure *figure)
 {
 	int i;
 	int j;
-	int width;
 
 	figure->w = 1;
-	width = 0;
 	i = -1;
 	while (++i < FIELD_SIZE)
 	{
@@ -58,8 +54,9 @@ void		find_widtht(t_figure *figure)
 	}
 }
 
-void		*find_figure_size(t_figure *figure)
+t_figure		*find_figure_size(t_figure *figure)
 {
 	find_widtht(figure);
 	find_height(figure);
+	return (figure);
 }

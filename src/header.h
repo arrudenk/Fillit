@@ -60,7 +60,7 @@ int				place(t_figure *figure, t_map *map, int x, int y);
 void			set_piece(t_figure *figure, t_map *map,
 				t_coord *coord, char c);
 t_map			*solve(t_list *figure_list, int figures_number);
-void			*find_figure_size(t_figure *figure);
+t_figure		*find_figure_size(t_figure *figure);
 t_coord			*coord_new(int x, int y);
 
 #endif
