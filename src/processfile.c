@@ -10,7 +10,43 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <fcntl.h>
 #include "header.h"
+
+int		check_figure_field(char *two_one)
+{
+	int i;
+
+	i = -1;
+	while (two_one[++i])
+	{
+		if (i != 19)
+		{
+			if (two_one[i] == '\n' && two_one[i + 1] == '\n')
+				return (0);
+		}
+	}
+	return (1);
+}
+
+int		check_cols(char *argv)
+{
+	char	*buff;
+	int		fd;
+
+	buff = ft_strnew(21);
+	fd = open(argv, O_RDONLY);
+	while (read(fd, (void *)buff, 21) > 0)
+	{
+		if (!check_figure_field(buff))
+		{
+			ft_putstr("error");
+			return (0);
+		}
+	}
+	close(fd);
+	return (1);
+}
 
 t_list		*create_figures_list(char **columns)
 {

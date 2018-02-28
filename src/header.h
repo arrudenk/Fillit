@@ -43,6 +43,7 @@ typedef struct	s_file
 	int			fig_num;
 }				t_file;
 
+int				check_cols(char *argv);
 t_file			*give_file_buff(char *argv);
 int				cut_find_chek(t_list *list, int fig_num);
 void			ft_lstrev(t_list **begin_list);

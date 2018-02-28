@@ -25,6 +25,8 @@ int	main(int argc, char **argv)
 		return (0);
 	}
 	file = give_file_buff(argv[1]);
+	if (file->fig_num > 26 || !check_cols(argv[1]))
+		return (0);
 	if (checker(file))
 	{
 		figures_list = extract_figures(file);

@@ -51,6 +51,8 @@ t_file		*give_file_buff(char *argv)
 	read(fd, file->buff, file->size);
 	close(fd);
 	file->fig_num = file->size / 21;
+	if (file->fig_num > 26)
+		ft_putstr("error\n");
 	return (file);
 }
 
